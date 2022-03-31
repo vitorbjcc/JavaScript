@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        h1 {
+            font-family: "Segoe UI";
+        }
+        body {
+            font: normal 18pt Arial;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        input {
+            font-size: 13pt;
+            border: 1px solid #c9d1d9;
+            background-color: #c9d1d9;
+        }
+        #btn {
+            border: 1px solid rgb(0, 0, 0, 0.636);
+            cursor: pointer;
+            width: 120px;
+            height: 40px;
+            background: #238636;
+            border: 1px solid #238636;
+            color: white;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+            font-size: 20px;
+            font-weight: 500;
+            padding: 5px 16px;
+            vertical-align: middle;
+            line-height: 20px;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+<body>
+    <h1>Sistema de Multas.</h1>
+    <input type="number" name="vel" id="vel" placeholder="Km/H"> <br> <br>
+    <input type="button" value="Continue" id="btn">
+    <p id="res">Resultado</p>
+    <script>
+        function Verify() {
+            var item = window.document.getElementById('vel')
+            var velocidade = Number(item.value)
+            if (velocidade > 60) {
+                window.document.getElementById('res').innerHTML = `Andando em ${velocidade}km/h não é permitido. MULTADO!`
+            } else {
+                window.document.getElementById('res').innerHTML = `É permitido andar em ${velocidade}km/h.`
+            }
+        }
+        window.document.getElementById('btn').addEventListener('click', Verify)
+    </script>
+</body>
+</html>
